@@ -1,10 +1,10 @@
-<h2>Search Authors</h2>
-<form action="/authors" method="GET">
+<h2>Search Employee</h2>
+<form action="/employee" method="GET">
     <label>Name</label>
     <input type="text" name="name" value="<%= searchOptions.name %>">
     <button type="submit">Search</button>
 </form>
 <br>
-<% authors.forEach(author => { %>
-    <div><%= author.name %></div>
+<% employee.forEach(employee => { %>
+    <div><%= employee.name %></div>
 <% }) %>

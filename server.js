@@ -2,7 +2,7 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
-const authorsRouter = require('./routes/authors')
+const employeeRouter = require('./routes/employee')
 
 const app = express()
 
@@ -30,7 +30,7 @@ mongoose.connect(uristring, {
 
 // routes
 app.use('/', indexRouter)
-app.use('/authors', authorsRouter)
+app.use('/employee', employeeRouter)
 
 // Listen PORT
 app.listen(process.env.PORT || 3000)
