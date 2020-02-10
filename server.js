@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // mongoose connection
 const mongoose = require('mongoose')
-const uristring = process.env.MONGOLAB_TEAL_URI || 'mongodb://localhost/ACMEdb'
+const uristring = process.env.MONGODB_URI || 'mongodb://localhost/ACMEdb'
 mongoose.connect(uristring, {   
     useNewUrlParser: true,
     useUnifiedTopology: true},
