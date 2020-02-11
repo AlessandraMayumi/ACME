@@ -2,7 +2,12 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
-const employeeRouter = require('./routes/employee')
+const customerRouter = require('./routes/crm/customers')
+const transactionRouter = require('./routes/financial/transactions')
+const employeeRouter = require('./routes/hr/employees')
+const titleRouter = require('./routes/hr/titles')
+const chartRouter = require('./routes/online_store/charts')
+const checkoutRouter = require('./routes/online_store/checkout')
 
 const app = express()
 
@@ -30,7 +35,12 @@ mongoose.connect(uristring, {
 
 // routes
 app.use('/', indexRouter)
-app.use('/employee', employeeRouter)
+app.use('/crm/customers', customerRouter)
+app.use('/financial/transactions', transactionRouter)
+app.use('/hr/employees', employeeRouter)
+app.use('/hr/titles', titleRouter)
+app.use('/online_store/charts', chartRouter)
+app.use('/online_store/checkout', checkoutRouter)
 
 // Listen PORT
 app.listen(process.env.PORT || 3000)

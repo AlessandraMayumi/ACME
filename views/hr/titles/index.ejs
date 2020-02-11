@@ -1,0 +1,19 @@
+<h2>Search Title</h2>
+<form action="/hr/titles" method="GET">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title" value="<%= searchOptions.title %>">
+  </div>
+  <button type="submit">Search</button>
+</form>
+<div>
+  <% titles.forEach(title => { %>
+    <%= title.title %>
+    <% employees.forEach(employee => { %>
+      <% if (employee.id == title.employee) { %>
+        <%= employee.name %>
+      <% } %>
+    <% }) %>
+  <br>
+  <% }) %>
+</div>

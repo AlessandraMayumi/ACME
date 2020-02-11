@@ -5,15 +5,18 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    dept_name: {
-        type: String
+    phone: {
+        type: Number
     },
-    hire_date: {
+    email:{
+        type: String 
+    },
+    address: {
+        type: String,
+    },
+    created_at: {
         type: Date,
-        require: true
-    },
-    to_date: {
-        type: Date
+        default: Date.now
     }
 })
 

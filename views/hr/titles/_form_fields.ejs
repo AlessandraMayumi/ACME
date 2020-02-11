@@ -1,0 +1,26 @@
+<div>
+  <label>Title</label>
+  <input type="text" name="title" value="<%= title.title %>">
+</div>
+<div>
+  <label>Employee</label>
+  <select name="employee">
+  <% employees.forEach(employee => { %>
+    <% if (employee.id === title.employee) { %>
+      <option selected label="<%= employee.name %>" value="<%= employee.id %>">
+    <% } else { %>
+      <option label="<%= employee.name %>" value="<%= employee.id %>">
+    <% } %>
+  <% }) %>
+  </select>
+</div>
+<div>
+  <label>From Date</label>
+  <input type="date" name="from_date"
+        value="<%= title.from_date == null ? '' : title.from_date.toISOString().split('T')[0] %>">
+</div>
+<div>
+  <label>To Date</label>
+  <input type="date" name="to_date"
+        value="<%= title.to_date == null ? '' : title.to_date.toISOString().split('T')[0] %>">
+</div>

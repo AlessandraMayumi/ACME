@@ -1,5 +1,5 @@
 const express = require('express')
-const Employee = require('../model/employee')
+const Employee = require('../../model/hr/employee')
 
 const router = express.Router()
 
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     }
     try {
         const employee = await Employee.find(searchOptions)
-        res.render('employee/index', { 
+        res.render('hr/employees/index', { 
             employee: employee,
             searchOptions: req.query
         })
@@ -22,19 +22,22 @@ router.get('/', async (req, res) => {
 
 // New Employee Route
 router.get('/new', (req, res) =>{
-    res.render('employee/new', { employee: new Employee() })
+    res.render('hr/employees/new', { employee: new Employee() })
 })
 
 // Create Employee Route 
 router.post('/', async (req, res) =>{
     const employee = new Employee({
-        name: req.body.name
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        address: req.body.address
     })
     try{
         const newEmployee = await employee.save()
-        res.redirect(`employee`)
+        res.redirect(`/hr/employees`)
     } catch {
-        res.render('employee/new', {
+        res.render('hr/employees/new', {
             employee: employee,
             errorMessage: 'Error creating Employee'
         })
