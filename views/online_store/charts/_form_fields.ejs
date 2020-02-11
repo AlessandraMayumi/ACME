@@ -1,11 +1,11 @@
 <div>
-    <label>Customer</label>
-    <select name="customer">
-        <% customers.forEach(customer => { %>
-          <% if (customer.id === chart.customer) { %>
-            <option selected label="<%= customer.name %>" value="<%= customer.id %>">
+    <label>Chart</label>
+    <select name="chart">
+        <% charts.forEach(chart => { %>
+          <% if (chart.id === checkout.chart) { %>
+            <option selected label="<%= chart.id charch.total %>" value="<%= chart.id %>">
           <% } else { %>
-            <option label="<%= customer.name %>" value="<%= customer.id %>">
+            <option label="<%= chart.id charch.total %>" value="<%= chart.id %>">
           <% } %>
         <% }) %>
         </select>

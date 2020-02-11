@@ -7,7 +7,7 @@ const router = express.Router()
 // All Chart Route
 router.get('/', async (req, res) => {
     try {
-        const charts = await Chart.find()
+        const charts = await Chart.find({})
         res.render('online_store/charts/index', { 
             charts: charts,
         })

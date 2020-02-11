@@ -3,9 +3,9 @@
   <select name="chart">
   <% charts.forEach(chart => { %>
     <% if (chart.id === checkout.chart) { %>
-      <option selected label="<%= chart.customer chart.total  chart.customer chart.id%>" value="<%= chart.id %>">
+      <option selected label="<%= chart.id%>" value="<%= chart.id %>">
     <% } else { %>
-      <option label="<%= chart.customer chart.total chart.id %>" value="<%= chart.id %>">
+      <option label="<%= chart.id%>" value="<%= chart.id %>">
     <% } %>
   <% }) %>
   </select>
@@ -17,6 +17,6 @@
 <div>
 <div>
   <label>Credit Card Number</label>
-  <input type="tel" name="name" value="<%= checkout.card_number %>">
+  <input type="tel" name="card_number" value="<%= checkout.card_number %>">
 </div>
 <div>

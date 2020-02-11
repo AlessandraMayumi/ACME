@@ -25,14 +25,13 @@ router.get('/new', async (req, res) => {
 // Create Checkout Route
 router.post('/', async (req, res) => {
   const checkout = new Checkout({
-    checkout: req.body.checkout,
     chart: req.body.chart,
-    from_date: new Date(req.body.from_date),
-    to_date: new Date(req.body.to_date)
+    name:req.body.name,
+    card_number: req.body.card_number
   })
   try {
     const newCheckout = await checkout.save()
-    res.redirect(`online_store/checkout`)
+    res.redirect(`/online_store/checkout`)
   } catch {
     renderNewPage(res, checkout, true)
   }
